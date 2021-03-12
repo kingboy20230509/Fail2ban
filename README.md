@@ -23,6 +23,13 @@
 # 卸载 #
     wget https://raw.githubusercontent.com/zhucaidan/Fail2ban/master/uninstall.sh && bash uninstall.sh
 
+# 使用说明 #
+1.查看fail2ban状态：fail2ban-client status
+2.查看ssh-iptables封锁IP：fail2ban-client status ssh-iptables
+3.查看sshd封锁IP：fail2ban-client status sshd
+4.解封ssh-iptables中的IP：fail2ban-client set  ssh-iptables unbanip ***.**.**.***
+5.解封sshd中的IP：fail2ban-client set sshd unbanip ***.**.**.***
+
 # 注意事项 #
 1. 安装完成后请会重启SSH服务，请重新连接SSH会话
 2. 若出现SSH无法连接的情况，请检查是否修改过SSH端口，请填写写改后的正确端口进行连接
